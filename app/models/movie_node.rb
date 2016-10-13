@@ -3,4 +3,7 @@ class MovieNode < ApplicationRecord
   has_one :movie_node, :as => :nodable
   has_many :movies
 
+  # def movie_compiler
+    
 end
+

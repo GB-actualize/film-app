@@ -37,3 +37,57 @@ Movie.create(title: "Sin City",
 Movie.create(title: "Fargo",
               cast: "Frances McDormand")
 
+# MovieNode.create(title: "Gone in 60 Seconds",
+#               nodable_id: 1,
+#               nodable_type: "game",
+#               movie_id: 1,
+#               connection_name: "Angelina Jolie",
+#               connection_category: "cast",
+#               correct: true)
+
+# MovieNode.create(title: "Mr. and Mrs. Smith",
+#               nodable_id: 2,
+#               nodable_type: "node",
+#               movie_id: 2,
+#               connection_name: "Brad Pitt",
+#               connection_category: "cast",
+#               correct: true)
+
+# MovieNode.create(title: "Fight Club",
+#               nodable_id: 3,
+#               nodable_type: "node",
+#               movie_id: 3,
+#               connection_name: "Edward Norton",
+#               connection_category: "cast",
+#               correct: true)
+
+# MovieNode.create(title: "Birdman or (The Unexpected Virtue of Ignorance)",
+#               nodable_id: 4,
+#               nodable_type: "node",
+#               movie_id: 4,
+#               connection_name: "Michael Keaton",
+#               connection_category: "cast",
+#               correct: true)
+
+# MovieNode.create(title: "Beetlejuice",
+#               nodable_id: 5,
+#               nodable_type: "node",
+#               movie_id: 5,
+#               connection_name: "Winona Ryder",
+#               connection_category: "cast",
+#               correct: true)
+
+# MovieNode.create(title: "Edward Scizzorhands",
+#               nodable_id: 6,
+#               nodable_type: "node",
+#               movie_id: 6,
+#               connection_name: "Nicholas Cage",
+#               connection_category: "cast",
+#               correct: true)
+
+
+
+
+
+
+

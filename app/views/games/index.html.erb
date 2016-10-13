@@ -1,0 +1,16 @@
+
+  <% @games.each do |game| %>
+    <a href="/games/<%= game.id %>"> <%= game.id %> </a>
+  <% end %>
+
+<br>
+
+  <%= form_tag '/games', method: :post do %>
+      <div>
+        <%= hidden_field_tag(:user_id, current_user.id) %>
+      </div>
+      <div>
+        <%= hidden_field_tag(:status, "Activated") %>
+      </div>
+        <%= submit_tag "CREATE GAME!" %>
+  <% end %>
