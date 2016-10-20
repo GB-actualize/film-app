@@ -1,2 +1,13 @@
-<%= @game.movie_compiler %>
+<% @movie_nodes.each do |movie_node| %>
+  <% if movie_node.correct %> 
+    <%= movie_node.title %>
+  <% end %>
+<% end %>
 
+<% if @game.find_next %>
+  <p> <%= link_to "#{@game.find_next.title}", "/games/#{@game.id}", method: :patch %> </p>
+  <%= link_to "#{@incorrect_movies.first}", "/games" %>
+  <%= link_to "#{@incorrect_movies.last}", "/games" %>
+<% else %>
+  <p> <%= link_to 'GAME OVER!', "/games" %> </p>
+<% end %>
