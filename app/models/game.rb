@@ -24,8 +24,6 @@ class Game < ApplicationRecord
         movie_node = MovieNode.create(nodable_id: movie_node.id,
                                       nodable_type: "MovieNode",
                                       title: movie.title)
-
-
     end
   end
 
@@ -41,8 +39,8 @@ class Game < ApplicationRecord
     end
   end
 
-  # def finish_game 
-  #   Game.last.update(status: "Completed")
-  # end
+  def end_game 
+    update(status: "Completed")
+  end
 
 end

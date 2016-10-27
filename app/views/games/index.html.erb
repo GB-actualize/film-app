@@ -1,7 +1,28 @@
 
-  <% @games.each do |game| %>
-    <a href="/games/<%= game.id %>"> <%= game.id %> </a>
+<h2> GAMES IN PROGRESS </h2> 
+  <% @activated_games.each_slice(5) do |game_row| %>
+    <div class="row">
+      <% game_row.each do |activated_game| %>
+        <a href="/games/<%= activated_game.id %>"> <%= activated_game.id %> </a>
+      <% end %>
+    </div>
   <% end %>
+
+<br>
+
+<h2> COMPLETED GAMES </h2>
+  <% @completed_games.each_slice(5) do |game_row| %>
+    <div class="row">
+      <% game_row.each do |completed_game| %>
+        <a href="/games/<%= completed_game.id %>"> <%= completed_game.id %> </a>
+      <% end %>
+    </div>
+  <% end %>
+
+<%= form_tag "/movies", method: :get do %>
+  <%= text_field_tag :title, nil, placeholder: "Title" %>
+  <%= submit_tag %>
+<% end %>
 
 <br>
 
@@ -12,5 +33,7 @@
       <div>
         <%= hidden_field_tag(:status, "Activated") %>
       </div>
+      <div>
         <%= submit_tag "CREATE GAME!" %>
+      </div>
   <% end %>

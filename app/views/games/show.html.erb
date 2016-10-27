@@ -9,5 +9,5 @@
   <%= link_to "#{@incorrect_movies.first}", "/games" %>
   <%= link_to "#{@incorrect_movies.last}", "/games" %>
 <% else %>
-  <p> <%= link_to 'GAME OVER!', "/games" %> </p>
+  <p> <%= link_to 'GAME OVER!', "/games/#{@game.id}", method: :patch %> </p>
 <% end %>

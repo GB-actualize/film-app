@@ -1,13 +1,20 @@
 class GamesController < ApplicationController
   def index
     @games = Game.all
+    @activated_games = @games.where("status = ?", "Activated")
+    @completed_games = @games.where("status = ?", "Completed")
+
+    
   end
 
   def create
-      @game = Game.create(user_id: params[:user_id],
+    @game = Game.create(user_id: params[:user_id],
                           status: params[:status])
 
-      @game.make_nodes
+    @game.make_nodes
+
+
+
 
     redirect_to '/games'
   end
@@ -20,6 +27,7 @@ class GamesController < ApplicationController
     movie_node_titles = @movie_nodes.map { |node| node.title }
     unused_movies = Movie.all.map(&:title) - movie_node_titles
     @incorrect_movies = unused_movies.sample 2
+
   end
 
 
@@ -31,7 +39,7 @@ class GamesController < ApplicationController
     if @game.update_node
       redirect_to "/games/#{@game.id}"
     else
-      @game.update("status" => "Completed")
+      @game.end_game
       redirect_to "/games"
     end
   end

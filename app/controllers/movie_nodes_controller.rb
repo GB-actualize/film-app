@@ -1,10 +1,14 @@
 class MovieNodesController < ApplicationController
   def index
     @movie_nodes = MovieNode.all
+    title = params[:title]
+    @api_request = Unirest.get("http://www.omdbapi.com/?t=#{title}&y=&plot=full&r=json").body
   end
 
   def show
     @movie_node = MovieNode.find(params[:id])
+
+    
   end
 
   def new
