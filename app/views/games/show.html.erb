@@ -1,13 +1,27 @@
-<% @movie_nodes.each do |movie_node| %>
-  <% if movie_node.correct %> 
-    <%= movie_node.title %>
+
+<h1> <%= @nodes[0].title %> is related to <%= @nodes[5].title %> </h1>
+
+<h2> YOUR MOVIE PATH </h2>
+<% @nodes.each do |node| %>
+  <% if node.correct %>
+    ***  <%= node.title %> ***
   <% end %>
 <% end %>
 
-<% if @game.find_next %>
-  <p> <%= link_to "#{@game.find_next.title}", "/games/#{@game.id}", method: :patch %> </p>
-  <%= link_to "#{@incorrect_movies.first}", "/games" %>
-  <%= link_to "#{@incorrect_movies.last}", "/games" %>
+<% if @next_node %>
+  <p> <%= link_to image_tag(@next_node_poster), "/games/#{@game.id}", method: :patch %> </p>
+  <p> <%= link_to @next_node.title, "/games/#{@game.id}", method: :patch %> </p> 
+  or 
+  <p> <%= link_to image_tag(@random_movie_poster), "/games" %> </p>
+  <p> <%= link_to @random_movie_title, "/games" %> </p>
 <% else %>
-  <p> <%= link_to 'GAME OVER!', "/games/#{@game.id}", method: :patch %> </p>
+  <p> <%= link_to "GAME OVER MAN", "/games/#{@game.id}", method: :patch %>
 <% end %>
+
+
+
+
+
+
+
+

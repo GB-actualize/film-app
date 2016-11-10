@@ -1,6 +1,20 @@
+<% @movie_nodes.each do |movie_node| %>
+  <% if movie_node.correct %> 
+    <%= movie_node.title %>
+  <% end %>
+<% end %>
 
+<% if @game.find_next %>
+  <p> <%= link_to "#{@game.find_next.title}", "/games/#{@game.id}", method: :patch %> </p>
+  <%= link_to "#{@incorrect_movies.first}", "/games" %>
+  <%= link_to "#{@incorrect_movies.last}", "/games" %>
+<% else %>
+  <p> <%= link_to 'GAME OVER!', "/games/#{@game.id}", method: :patch %> </p>
+<% end %>
+  
   <%= form_tag '/games', method: :post do %>
-        <%= collection_select(:movie, :movie_id, Movie.all, :id, :title) %>
+      <%= text_field_tag :search_term %>
+      <%= collection_select(:movie, :movie_id, Movie.all, :id, :title) %>
       <div>
         <%= hidden_field_tag(:user_id, current_user.id) %>
       </div>
