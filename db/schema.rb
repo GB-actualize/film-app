@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103002800) do
+ActiveRecord::Schema.define(version: 20161116001005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20161103002800) do
     t.string   "title"
     t.integer  "nodable_id"
     t.string   "nodable_type"
-    t.integer  "movie_id"
+    t.integer  "poster_id"
     t.string   "connection_name"
     t.string   "connection_category"
     t.datetime "created_at",                          null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20161103002800) do
     t.string   "cast"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "poster"
   end
 
   create_table "users", force: :cascade do |t|

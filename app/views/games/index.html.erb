@@ -1,35 +1,39 @@
-
-<h2> GAMES IN PROGRESS </h2> 
-  <% @activated_games.each_slice(5) do |game_row| %>
-    <div class="row">
-      <% game_row.each do |activated_game| %>
-        <a href="/games/<%= activated_game.id %>"> <%= activated_game.id %> </a>
-      <% end %>
-    </div>
-  <% end %>
-
-<br>
-
-<h2> COMPLETED GAMES </h2>
-  <% @completed_games.each_slice(5) do |game_row| %>
-    <div class="row">
-      <% game_row.each do |completed_game| %>
-        <a href="/games/<%= completed_game.id %>"> <%= completed_game.id %> </a>
-      <% end %>
-    </div>
-  <% end %>
-
-<%= form_tag '/games', method: :post do %>
-  <div> 
-    <%= text_field_tag :search %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Home
+  </title>
+</head>
+<body>
+  <div class="game_index">
+    <% if current_user %>
+      <h2> Your activated games </h2>
+      <h3> Click a game to resume where you left off, or create a new game from scratch! </h3> 
+        <% @activated_games.each do |game| %>
+          <p> <%= link_to game.search, "/games/#{game.id}", method: :get %> </p>
+       <% end %>
+    <% end %>
   </div>
-  <div>
-    <%= hidden_field_tag(:user_id, current_user.id) %>
+    <br>
+
+  <div class="game_index_form">    
+    <%= form_tag '/games', method: :post do %>
+      <div> 
+        <%= text_field_tag :search %>
+      </div>
+      <div>
+        <%= hidden_field_tag(:user_id, current_user.id) %>
+      </div>
+      <div>
+        <%= hidden_field_tag(:status, "Activated") %>
+      </div>
+      <div>
+        <%= submit_tag "CREATE GAME!" %>
+      </div>
+    <% end %>
   </div>
-  <div>
-    <%= hidden_field_tag(:status, "Activated") %>
-  </div>
-  <div>
-    <%= submit_tag "CREATE GAME!" %>
-  </div>
-<% end %>
+ 
+ 
+</body>
+</html>

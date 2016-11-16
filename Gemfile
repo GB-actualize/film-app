@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass'
 gem 'themoviedb-api'
 gem 'unirest'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

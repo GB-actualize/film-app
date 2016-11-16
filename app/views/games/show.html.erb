@@ -1,26 +1,22 @@
 
-<h1> <%= @nodes[0].title %> is related to <%= @nodes[5].title %> </h1>
-
-<h2> YOUR MOVIE PATH </h2>
-<% @nodes.each do |node| %>
-  <% if node.correct %>
-    ***  <%= node.title %> ***
-  <% end %>
-<% end %>
-
 <% if @next_node %>
-  <p> <%= link_to image_tag(@next_node_poster), "/games/#{@game.id}", method: :patch %> </p>
-  <p> <%= link_to @next_node.title, "/games/#{@game.id}", method: :patch %> </p> 
-  or 
-  <p> <%= link_to image_tag(@random_movie_poster), "/games" %> </p>
-  <p> <%= link_to @random_movie_title, "/games" %> </p>
+  <p> <h2> Your last node was <%= @current_node.title %> </h2></p> 
+  <p> <%= link_to image_tag(@previous_movie_poster), "/games", method: :get %> </p>
+
+  <h2> Your current node is: </h2>
+
+
+  <% @posters.each do |poster| %>
+    <% if poster[:right] %>
+      <%= link_to image_tag(poster[:poster]), "/movie_nodes/#{@next_node.id}", method: :patch %>
+    <% else %>
+      <%= link_to image_tag(poster[:poster]), "/games", method: :get %>
+    <% end %>
+  <% end %>
+
 <% else %>
-  <p> <%= link_to "GAME OVER MAN", "/games/#{@game.id}", method: :patch %>
+  <h1> YOU WON </h1>
 <% end %>
-
-
-
-
 
 
 
