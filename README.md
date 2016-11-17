@@ -1,24 +1,20 @@
-# README
+# Reelator!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## This game finds new movies through a movie's common actor. 
 
-Things you may want to cover:
+Relies on the 'themoviedb-api' gem, and a working themoviedb.org API key.
 
-* Ruby version
+* Enter a movie search term
 
-* System dependencies
+* Try to select the correct match, use 'Hint' as needed
 
-* Configuration
+* Start a new game from your current game, by clicking 'Start game from current node'
 
-* Database creation
+* If you're wrong, you unfortunately lost.
 
-* Database initialization
+* Game is hard.
 
-* How to run the test suite
+* You can reset and try again though, or search for a new movie.
 
-* Services (job queues, cache servers, search engines, etc.)
+* Reset all games and their nodes by clicking "Reset all games" on the Games Index.
 
-* Deployment instructions
-
-* ...
