@@ -16,11 +16,6 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-body {
-  margin: 50px;
-  bottom: 100px;
-}
-
 
 article,
 aside,
@@ -5030,11 +5025,7 @@ a.thumbnail.active {
   padding: 9px;
   color: #c8c8c8;
 }
-.alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
+
 }
 .alert h4 {
   margin-top: 0;
@@ -5056,9 +5047,7 @@ a.thumbnail.active {
 }
 .alert-dismissable .close,
 .alert-dismissible .close {
-  position: relative;
-  top: -2px;
-  right: -21px;
+
   color: inherit;
 }
 .alert-success {

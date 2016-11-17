@@ -1,20 +1,27 @@
-<h1>Sign-Up</h1>
-<%= form_tag '/users', method: :post do  %>
-  <div>
-    <%= label_tag :name %>
-    <%= text_field_tag :name  %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div class="jumbotron">
+    <h2>Sign-Up</h2>
+      <%= form_tag '/users', method: :post do  %>  
+        <%= label_tag :name %>
+        <%= text_field_tag :name  %>
+        <br>
+        <%= label_tag :email %>
+        <%= text_field_tag :email  %>
+        <br>
+        <%= label_tag :password %>
+        <%= password_field_tag :password  %>
+        <br>
+        <%= label_tag :password_confirmation %>
+        <%= password_field_tag :password_confirmation  %>
+        <br>
+        <%= submit_tag "Submit", :class => "btn btn-default"  %> 
+      <% end %>
   </div>
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email  %>
-  </div>
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password  %>
-  </div>
-  <div>
-    <%= label_tag :password_confirmation %>
-    <%= password_field_tag :password_confirmation  %>
-  </div>
-    <%= submit_tag "YES" %>
-<% end %>
+
+</body>
+</html>

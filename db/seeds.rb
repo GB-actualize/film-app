@@ -1,53 +1,53 @@
 
-Movie.create(title: "Black Swan",
-              cast: "Winona Ryder",
-              poster: "http://tinyurl.com/hyhcykn")
+# Movie.create(title: "Black Swan",
+#               cast: "Winona Ryder",
+#               poster: "http://tinyurl.com/hyhcykn")
 
-Movie.create(title: "Beetlejuice",
-              cast: "Michael Keaton",
-              poster: "http://tinyurl.com/jxpbtng")
+# Movie.create(title: "Beetlejuice",
+#               cast: "Michael Keaton",
+#               poster: "http://tinyurl.com/jxpbtng")
 
-Movie.create(title: "Birdman or (The Unexpected Virtue of Ignorance)",
-              cast: "Edward Norton",
-              poster: "http://tinyurl.com/hn34fq3")
+# Movie.create(title: "Birdman or (The Unexpected Virtue of Ignorance)",
+#               cast: "Edward Norton",
+#               poster: "http://tinyurl.com/hn34fq3")
 
-Movie.create(title: "Fight Club",
-              cast: "Brad Pitt",
-              poster: "http://tinyurl.com/j2cohzv")
+# Movie.create(title: "Fight Club",
+#               cast: "Brad Pitt",
+#               poster: "http://tinyurl.com/j2cohzv")
 
-Movie.create(title: "Mr. & Mrs. Smith",
-              cast: "Angelina Jolie",
-              poster: "http://tinyurl.com/jog6hav")
+# Movie.create(title: "Mr. & Mrs. Smith",
+#               cast: "Angelina Jolie",
+#               poster: "http://tinyurl.com/jog6hav")
 
-Movie.create(title: "Maleficent",
-            cast: "Sharlto Copley",
-            poster:"http://tinyurl.com/zdgqz9n")
+# Movie.create(title: "Maleficent",
+#             cast: "Sharlto Copley",
+#             poster:"http://tinyurl.com/zdgqz9n")
 
-#-----------------------game2
+# #-----------------------game2
 
-Movie.create(title: "Casino Royale",
-              cast: "Mads Mikkelsen",
-              poster: "http://tinyurl.com/z6g4sqp")
+# Movie.create(title: "Casino Royale",
+#               cast: "Mads Mikkelsen",
+#               poster: "http://tinyurl.com/z6g4sqp")
 
-Movie.create(title: "Dr. Strange",
-            cast: "Benedict Cumberbatch",
-            poster: "http://tinyurl.com/j6h48pc")
+# Movie.create(title: "Dr. Strange",
+#             cast: "Benedict Cumberbatch",
+#             poster: "http://tinyurl.com/j6h48pc")
 
-Movie.create(title: "Star Trek: Into Darkness",
-            cast: "Chris Pine",
-            poster: "http://tinyurl.com/jgr39xh")
+# Movie.create(title: "Star Trek: Into Darkness",
+#             cast: "Chris Pine",
+#             poster: "http://tinyurl.com/jgr39xh")
 
-Movie.create(title: "Smokin' Aces",
-            cast: "Ryan Reynolds",
-            poster: "http://tinyurl.com/jcux8j3")
+# Movie.create(title: "Smokin' Aces",
+#             cast: "Ryan Reynolds",
+#             poster: "http://tinyurl.com/jcux8j3")
 
-Movie.create(title: "Waiting",
-              cast: "Anna Faris",
-              poster: "http://tinyurl.com/gojejkb")
+# Movie.create(title: "Waiting",
+#               cast: "Anna Faris",
+#               poster: "http://tinyurl.com/gojejkb")
 
-Movie.create(title: "Lost in Translation",
-            cast: "Bill Murray",
-            poster: "http://tinyurl.com/hanrhwt")
+# Movie.create(title: "Lost in Translation",
+#             cast: "Bill Murray",
+#             poster: "http://tinyurl.com/hanrhwt")
 
 Game.create(status: "Activated",
             user_id: 1,
@@ -156,6 +156,59 @@ MovieNode.create(title: "Lost in Translation",
                 connection_category: "Actor",
                 correct: false)
 
+#----------------------game 3
+
+Game.create(status: "Activated",
+            user_id: 1,
+            search: "Superbad")
+
+MovieNode.create(title: "Superbad",
+                nodable_id: 3,
+                nodable_type: "Game",
+                poster_id: 8363,
+                connection_name: "Jonah Hill",
+                connection_category: "Actor",
+                correct: true)
+
+MovieNode.create(title: "The Wolf of Wall Street",
+                nodable_id: 3,
+                nodable_type: "MovieNode",
+                poster_id: 106646,
+                connection_name: "Matthew McConaughey",
+                connection_category: "Actor",
+                correct: false)
+
+MovieNode.create(title: "Tropic Thunder",
+                nodable_id: 3,
+                nodable_type: "MovieNode",
+                poster_id: 7446,
+                connection_name: "Jack Black",
+                connection_category: "Actor",
+                correct: false)
+
+MovieNode.create(title: "King Kong",
+                nodable_id: 3,
+                nodable_type: "MovieNode",
+                poster_id: 254,
+                connection_name: "Adrian Brody",
+                connection_category: "Actor",
+                correct: false)
+
+MovieNode.create(title: "Grand Budapest Hotel",
+                nodable_id: 3,
+                nodable_type: "MovieNode",
+                poster_id: 120467,
+                connection_name: "Saoirse Ronan",
+                connection_category: "Actor",
+                correct: false)
+
+MovieNode.create(title: "Hanna",
+                nodable_id: 3,
+                nodable_type: "MovieNode",
+                poster_id: 50456,
+                connection_name: "Eric Bana",
+                connection_category: "Actor",
+                correct: false)
 
 
 #44214, 4011, 194662, 550, 787, 102651, 36557, 284052, 7516, 7553, 153] => movie ids

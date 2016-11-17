@@ -34,15 +34,21 @@ class Game < ApplicationRecord
     self.update(correct: true)
   end
 
+  def end_game
+    self.update(status: "Completed")
+  end
+
   def self.reset_games
     not_first_nodes = MovieNode.where(nodable_type: "MovieNode")
     not_first_nodes.update_all(correct: false)
+    all_games = Game.where(status: "Completed")
+    all_games.update_all(status: "Activated")
   end
 
 #poster api request methods
 
   def random_movie
-    Tmdb::Movie.top_rated(page: (1..5).to_a.sample).results
+    Tmdb::Movie.top_rated(page: (1..50).to_a.sample).results
   end
 
   def db_poster_path(poster_id)
@@ -57,9 +63,9 @@ class Game < ApplicationRecord
 
   #api request methods
 
-  # def db_movie
-  #   Tmdb::Search.movie("#{search}", include_adult: false)['results'][0]
-  # end
+  def db_movie(search)
+    Tmdb::Search.movie("#{search}", include_adult: false)['results'][0]
+  end
 
   # def db_cast(movie_id)
   #   Tmdb::Movie.cast("#{movie_id}")
@@ -120,42 +126,4 @@ class Game < ApplicationRecord
 
   #   true
   # end
-
-  # def end_game
-  #   # delete all nodes from game
-  # end
-
-
-  # def jpeg_id
-  #   db_poster_path(movie_id)
-  # end
-
-  # def poster(jpeg_id)
-  #   config = Tmdb::Configuration.get
-  #   base_url = config.images.base_url
-  #   size = config.images.poster_sizes[3]
-  #   "#{base_url}#{size}#{jpeg_id}"
-  # end
-
-  # def random_jpeg_id(movie_object)
-  #   movie_object.poster_path
-  # end
-
-  # def random_movie_title(movie_object)
-  #   movie_object.title
-  # end
-
-  # def random_movie_poster(random_jpeg_id)
-  #   movie_poster = Tmdb::Movie.posters("#{poster_id}").first.file_path
-  #   config = Tmdb::Configuration.get
-  #   base_url = config.images.base_url
-  #   size = config.images.poster_sizes[3]
-  #   "#{base_url}#{size}#{random_jpeg_id}"
-    
-  # end
-
-  # def end_game 
-  #   update(status: "Completed")
-  # end
-
 end

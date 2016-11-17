@@ -1,23 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>
+    Movie Node
+  </title>
+  
+</head>
+<body>
+  <% if @next_node %>
+  <p> <h2> <%= @current_node.title %> </h2></p> 
+      <h4> Has a cast connection to one of the films below. </h4>
 
-<% if @next_node %>
-  <p> <h2> Your last node was <%= @current_node.title %> </h2></p> 
+      <button class="btn btn-default"> Hover over me for hint! </button>
+       <div class="hover_content">
+          <%= @current_node.connection_name %> makes an appearance in the next film.
+      </div>
+       
+
   <p> <%= link_to image_tag(@previous_movie_poster), "/games", method: :get %> </p>
+      <%= @current_node_info.overview %>
 
-  <h2> Your current node is: </h2>
+  <h2> Choose a movie which relates to <%= @current_node.title %> </h2>
+
 
 
   <% @posters.each do |poster| %>
     <% if poster[:right] %>
       <%= link_to image_tag(poster[:poster]), "/movie_nodes/#{@next_node.id}", method: :patch %>
     <% else %>
-      <%= link_to image_tag(poster[:poster]), "/games", method: :get %>
+      <%= link_to image_tag(poster[:poster]), "/games/#{@game.id}", method: :patch %>
     <% end %>
   <% end %>
+
+   <div class="game_index_form">    
+    <%= form_tag '/games', method: :post do %>
+      <div> 
+        <%= text_field_tag :search %>
+      </div>
+      <div>
+        <%= hidden_field_tag(:user_id, current_user.id) %>
+      </div>
+      <div>
+        <%= hidden_field_tag(:status, "Activated") %>
+      </div>
+      <div>
+        <p> <%= submit_tag "Submit", :class => "btn btn-default"  %> </p>
+      </div>
+    <% end %>
+
+    <button class="btn btn-default">Start Game From Current Node </button>
+  </div>
 
 <% else %>
   <h1> YOU WON </h1>
 <% end %>
-
-
-
-
+</body>
+</html>

@@ -2,23 +2,27 @@
 <html>
 <head>
   <title></title>
+
 </head>
 <body>
-<h1> Movie Routes </h1>
-<h3> Login </h3>
+<div class="jumbotron"> 
+<h1> <span class="glyphicon glyphicon-film"> </span> Reelator <span class="glyphicon glyphicon-film"></span> </h1>
+
+<h4> Connecting movies 5 nodes at a time! </h4> 
+
   <%= form_tag '/sessions', method: :post do %>
-  <div>
+    <br>
     <%= label_tag :email %>
     <%= text_field_tag :email %>
-  </div>
-  <div>
+    <br> 
     <%= label_tag :password %>
     <%= password_field_tag :password %>
-  </div>
+    <br> <br>
   <p> <%= submit_tag "Submit", :class => "btn btn-default"  %> </p>
-<% end %>
+  <% end %>
+  <a href="/signup" class="btn btn-default"> Not a user? Signup!</a>
+</div>
 
-<a href="/signup" class="btn btn-default"> Not a user? Signup!</a>
 
 </body>
 </html>
